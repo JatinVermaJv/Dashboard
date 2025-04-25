@@ -29,8 +29,7 @@ const ChatAI = () => {
             value={message}
             type="text"
             placeholder="Ask your question here.."
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg pr-12 focus:outline-none focus:border-blue-500"
-            
+            className="w-full px-4 py-3 border border-gray-200 rounded-lg pr-12 focus:outline-none focus:border-blue-500 placeholder-gray-600 text-black"
             onChange={(e) => setMessage(e.target.value)}
           />
           {/*sendMessage is the function that sends the user questions to the llm using api call - TO BE IMPLEMENTED */}
