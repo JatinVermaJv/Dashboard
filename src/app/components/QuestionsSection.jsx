@@ -31,8 +31,8 @@ const QuestionsSection = () => {
     <div className="w-[360px] h-[291px] bg-white rounded-xl border border-[#EAECF0] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)] overflow-hidden">
       <div className="p-6 border-b border-gray-100">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold">Pending Questions</h2>
-          <span className="bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full">
+          <h2 className="text-lg font-semibold text-black">Pending Questions</h2>
+          <span className="bg-blue-100 text-blue-600 font-medium text-xs px-2 py-1 rounded-full">
             02
           </span>
         </div>
@@ -50,7 +50,7 @@ const QuestionsSection = () => {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <p className="font-medium text-sm">{item.user.name}</p>
+                  <p className="font-medium text-sm text-black">{item.user.name}</p>
                   <span className="text-gray-500 text-sm">{item.user.username}</span>
                   <span className="text-gray-400 text-sm">{item.timeAgo}</span>
                 </div>

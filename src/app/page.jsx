@@ -24,7 +24,7 @@ export default function Home() {
         <main className="pt-20 px-8 pb-8">
           <div className="flex gap-6">
             <div className="w-[360px] h-[586px] p-6 rounded-xl border border-[#EAECF0] bg-white shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]">
-              <h2 className="flex justify-center text-lg font-semibold mb-4">Account Progress</h2>
+              <h2 className="flex justify-center text-lg font-semibold mb-4 text-black">Account Progress</h2>
               <div className="w-40 h-40 mx-auto p-4 mb-6 pb-6 border-b border-gray-200">
                 <ProgressBar
                   value={85}
@@ -39,7 +39,7 @@ export default function Home() {
               
               <div className="space-y-4">
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="text-lg font-medium mb-4">Steps Completed</h3>
+                  <h3 className="text-lg font-medium mb-4 text-black">Steps Completed</h3>
                   <div className="space-y-3">
                     {['Profile Setup', 'Initial Training', 'Legal Documents'].map((step) => (
                       <div key={step} className="flex items-center gap-3">
@@ -55,7 +55,7 @@ export default function Home() {
                 </div>
 
                 <div className="bg-gray-100 p-4 rounded-lg">
-                  <h3 className="text-lg font-medium mb-4">Steps Remaining</h3>
+                  <h3 className="text-lg font-medium mb-4 text-black">Steps Remaining</h3>
                   <div className="space-y-3">
                     {['Financial Integration', 'Final Review'].map((step) => (
                       <div key={step} className="flex items-center gap-3">
@@ -70,10 +70,10 @@ export default function Home() {
 
             <div className="flex flex-col gap-6">
               <Card className="w-[360px] h-[280px]">
-                <h2 className="text-lg font-semibold mb-4">Total Franchisees Onboard</h2>
+                <h2 className="text-lg font-semibold mb-4 text-black">Total Franchisees Onboard</h2>
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-2">
-                    <span className="text-4xl font-bold">14</span>
+                    <span className="text-4xl font-bold text-black">14</span>
                     <div className="border border-green-500 text-green-500 text-sm px-2 py-0.5 rounded-full flex items-center gap-1">
                       <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none">
                         <path d="M6 9V3M6 3L3 6M6 3L9 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -109,30 +109,30 @@ export default function Home() {
                         <div className="w-2 h-2 rounded-full bg-blue-600"></div>
                         <span className="text-gray-600">Stage 1 (Initial Inquiry)</span>
                       </div>
-                      <span className="font-medium">02</span>
+                      <span className="font-medium text-black">02</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-blue-400"></div>
                         <span className="text-gray-600">Stage 2 (Document Submission)</span>
                       </div>
-                      <span className="font-medium">07</span>
+                      <span className="font-medium text-black">07</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-blue-200"></div>
                         <span className="text-gray-600">Stage 3 (Training)</span>
                       </div>
-                      <span className="font-medium">05</span>
+                      <span className="font-medium text-black">05</span>
                     </div>
                   </div>
                 </div>
               </Card>
               <Card className="w-[360px] h-[280px]">
-                <h2 className="text-lg font-semibold mb-4">Financial Wellbeing</h2>
+                <h2 className="text-lg font-semibold mb-4 text-black">Financial Wellbeing</h2>
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <span className="text-4xl font-bold block">20</span>
+                    <span className="text-4xl font-bold block text-black">20</span>
                     <span className="text-gray-600 text-sm">Total Franchisees</span>
                   </div>
                   <div className="border border-green-500 text-green-500 text-sm px-2 py-0.5 rounded-full flex items-center gap-1">
@@ -146,11 +146,11 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4 mt-4">
                   <div className="bg-gray-100 p-4 rounded-lg">
                     <span className="flex justify-center text-gray-600 text-sm block mb-1">Target</span>
-                    <span className="flex justify-center text-xl font-bold">$500,000</span>
+                    <span className="flex justify-center text-xl font-bold text-black">$500,000</span>
                   </div>
                   <div className="bg-gray-100 p-4 rounded-lg">
                     <span className="flex justify-center text-gray-600 text-sm block mb-1">Current</span>
-                    <span className="flex justify-center text-xl font-bold">$450,000</span>
+                    <span className="flex justify-center text-xl font-bold text-black">$450,000</span>
                   </div>
                 </div>
               </Card>
@@ -158,10 +158,10 @@ export default function Home() {
 
             <div className="flex flex-col gap-6">
               <Card className="w-[360px] h-[280px]">
-                <h2 className="text-lg font-semibold mb-4">Key Insights & Feedback</h2>
+                <h2 className="text-lg font-semibold mb-4 text-black">Key Insights & Feedback</h2>
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <div className="text-4xl font-bold">10%</div>
+                    <div className="text-4xl font-bold text-black">10%</div>
                     <div className="text-sm text-gray-600">Sales Growth</div>
                   </div>
                   <div className="flex items-center gap-2 bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm">
@@ -173,7 +173,7 @@ export default function Home() {
                 </div>
 
                 <div className="mt-4">
-                  <h3 className="text-lg font-medium mb-4">Feedback</h3>
+                  <h3 className="text-lg font-medium mb-4 text-black">Feedback</h3>
                   <div className="bg-gray-100 p-4 rounded-lg">
                     <p className="text-gray-600">
                       Franchisees are requesting more detailed training materials.
@@ -182,7 +182,7 @@ export default function Home() {
                 </div>
               </Card>
               <Card className="w-[360px] h-[280px]">
-                <h2 className="text-lg font-semibold mb-4">Prospect Leads</h2>
+                <h2 className="text-lg font-semibold mb-4 text-black">Prospect Leads</h2>
                 <div className="space-y-3">
                   {dummyProspects.map((prospect) => (
                     <div key={prospect.name} className="flex items-center justify-between bg-gray-100 p-3 rounded-lg">
@@ -192,7 +192,7 @@ export default function Home() {
                           alt={prospect.name}
                           className="w-8 h-8 rounded-full"
                         />
-                        <span className="text-sm font-medium">{prospect.name}</span>
+                        <span className="text-sm font-medium text-black">{prospect.name}</span>
                       </div>
                       <span className="text-sm text-gray-600">Stage: {prospect.stage}</span>
                     </div>
