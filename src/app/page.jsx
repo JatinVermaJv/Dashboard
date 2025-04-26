@@ -23,7 +23,7 @@ export default function Home() {
 
         <main className="pt-20 px-8 pb-8">
           <div className="flex gap-6">
-            <div className="w-[360px] h-[586px] p-6 rounded-xl border border-[#EAECF0] bg-white shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]">
+            <div className="w-[360px] h-[592px] p-6 rounded-xl border border-[#EAECF0] bg-white shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]">
               <h2 className="flex justify-center text-lg font-semibold mb-4 text-black">Account Progress</h2>
               <div className="w-40 h-40 mx-auto p-4 mb-6 pb-6 border-b border-gray-200">
                 <ProgressBar
