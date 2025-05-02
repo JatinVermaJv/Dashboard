@@ -1,13 +1,14 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useQuestionHistory } from '../context/QuestionHistoryContext';
 
 export const ChatAI = () => {
   //this is for the backend logic to send the actual question to the llm
   const [message, setMessage] = useState("");
-  const [questionHistory, setQuestionHistory] = useState([]);
-  const [userCount, setUserCount] = useState(1);
- // to log the history if there is the new question
+  const { addQuestion, questionHistory } = useQuestionHistory();
+
+  // to log the history if there is the new question
   useEffect(() => {
     console.log('Questions', questionHistory);
   }, [questionHistory]);
@@ -17,19 +18,7 @@ export const ChatAI = () => {
       console.warn("Message is empty. Please ask a proper question.");
       return;
     }
-
-    // creating the newquestion 
-    const newQuestion = {
-      userId: `user${userCount}`,
-      question: userMessage,
-      timestamp: new Date().toLocaleString()
-    };
-
-    // updating the history correctly
-    setQuestionHistory(prevHistory => [...prevHistory, newQuestion]);
-    // simulating the new user each time a question is beign asked
-    setUserCount(prevCount => prevCount + 1);
-    // Clearing the input for the next question
+    addQuestion(userMessage);
     setMessage("");
   };
   
