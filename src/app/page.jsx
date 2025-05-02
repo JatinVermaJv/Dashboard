@@ -2,8 +2,8 @@ import React from 'react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import ProgressBar from './components/ProgressBar';
-import QuestionsSection from './components/QuestionsSection';
-import ChatAI from './components/ChatAI';
+import { QuestionsSection } from './components/QuestionsSection';
+import { ChatAI } from './components/ChatAI';
 import Card from './components/Card';
 
 const dummyProspects = [
@@ -38,12 +38,13 @@ export default function Home() {
               </div>
               
               <div className="space-y-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="bg-gray-100 p-4 rounded-lg">
                   <h3 className="text-lg font-medium mb-4 text-black">Steps Completed</h3>
                   <div className="space-y-3">
                     {['Profile Setup', 'Initial Training', 'Legal Documents'].map((step) => (
                       <div key={step} className="flex items-center gap-3">
                         <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center">
+                          {/* using the svg icon for the check mark */}
                           <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
@@ -69,7 +70,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col gap-6">
-              <Card className="w-[360px] h-[280px]">
+              <Card className="">{/* width and height is provided so no need to define here also*/}
                 <h2 className="text-lg font-semibold mb-4 text-black">Total Franchisees Onboard</h2>
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-2">
@@ -81,7 +82,7 @@ export default function Home() {
                       7.4%
                     </div>
                   </div>
-                  <div className="flex -space-x-2">
+                  <div className="flex -space-x-2">{/* -space-x-2 for the profile to come one up to another Alternative we can use the z-index */}
                     {dummyProspects.map((prospect) => (
                       <img
                         key={prospect.name}
@@ -95,7 +96,8 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-
+                  
+                  {/* this is the space progress bar*/}
                 <div className="space-y-6">
                   <div className="flex flex-row items-start gap-2 w-full h-3">
                     <div className="flex-grow w-2 h-2 bg-blue-600 rounded-full"></div>
@@ -104,6 +106,7 @@ export default function Home() {
                   </div>
 
                   <div className="space-y-3">
+                    {/*could have used the map function to follow DRY principle*/}
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-blue-600"></div>
@@ -121,7 +124,7 @@ export default function Home() {
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-blue-200"></div>
-                        <span className="text-gray-600">Stage 3 (Training)</span>
+                        <div className="text-gray-600">Stage 3 (Training)</div>
                       </div>
                       <span className="font-medium text-black">05</span>
                     </div>
@@ -174,7 +177,7 @@ export default function Home() {
 
                 <div className="mt-4">
                   <h3 className="text-lg font-medium mb-4 text-black">Feedback</h3>
-                  <div className="bg-gray-100 p-4 rounded-lg">
+                  <div className="bg-gray-100 p-4 py-2 rounded-lg">
                     <p className="text-gray-600">
                       Franchisees are requesting more detailed training materials.
                     </p>

@@ -30,7 +30,7 @@ const Sidebar = () => {
                 {/* changing the color when hovering on the navlist */}
                 ${item.name === '' 
                   ? 'text-[#3B82F6] bg-[#1e4258]' 
-                  : 'text-[#94A3B8] hover:text-[#3B82F6] hover:bg-[#1e4258]'}`}
+                  : 'text-[#94A3B8] hover:text-[#3B82F6] hover:bg-[#1e4258]'}`}//change the bg transition color
             >
               <div className="flex items-center justify-between">
                 <span className="text-[15px]">{item.name}</span>

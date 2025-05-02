@@ -26,7 +26,7 @@ const questions = [
   }
 ];
 
-const QuestionsSection = () => {
+export const QuestionsSection = () => {
   return (
     <div className="w-[360px] h-[291px] bg-white rounded-xl border border-[#EAECF0] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)] overflow-hidden">
       <div className="p-6 border-b border-gray-100">
@@ -63,5 +63,3 @@ const QuestionsSection = () => {
     </div>
   );
 };
-
-export default QuestionsSection; 

@@ -1,12 +1,44 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const ChatAI = () => {
+export const ChatAI = () => {
   //this is for the backend logic to send the actual question to the llm
   const [message, setMessage] = useState("");
+  const [questionHistory, setQuestionHistory] = useState([]);
+  const [userCount, setUserCount] = useState(1);
+ // to log the history if there is the new question
+  useEffect(() => {
+    console.log('Questions', questionHistory);
+  }, [questionHistory]);
 
+  const sendMessage = (userMessage) => {
+    if (!userMessage.trim()) {
+      console.warn("Message is empty. Please ask a proper question.");
+      return;
+    }
+
+    // creating the newquestion 
+    const newQuestion = {
+      userId: `user${userCount}`,
+      question: userMessage,
+      timestamp: new Date().toLocaleString()
+    };
+
+    // updating the history correctly
+    setQuestionHistory(prevHistory => [...prevHistory, newQuestion]);
+    // simulating the new user each time a question is beign asked
+    setUserCount(prevCount => prevCount + 1);
+    // Clearing the input for the next question
+    setMessage("");
+  };
   
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      sendMessage(message);
+    }
+  };
 
   return (
     <div className="mt-6 p-6">
@@ -31,9 +63,13 @@ const ChatAI = () => {
             placeholder="Ask your question here.."
             className="w-full px-4 py-3 border border-gray-200 rounded-lg pr-12 focus:outline-none focus:border-blue-500 placeholder-gray-600 text-black"
             onChange={(e) => setMessage(e.target.value)}
+            onKeyUp={handleKeyPress}
           />
           {/*sendMessage is the function that sends the user questions to the llm using api call - TO BE IMPLEMENTED */}
-          <button onClick={() => sendMessage(message)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-500">
+          <button 
+            onClick={() => sendMessage(message)} 
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-500 transition-colors duration-200"
+          >
             <svg
               width="24"
               height="24"
@@ -56,4 +92,3 @@ const ChatAI = () => {
   );
 };
 
-export default ChatAI; 
